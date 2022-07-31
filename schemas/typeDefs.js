@@ -112,6 +112,7 @@ type Mutation {
     health: Int 
     level: Int
     experience: Int
+    tempExp: Int
     ): Stat
   addPersonality(
     characterId: ID!
