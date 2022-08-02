@@ -123,6 +123,16 @@ type Mutation {
     proficiencies: String 
     languages: String 
   ): Personality
+  updatePersonality(
+    characterId: ID!
+    personalityId: ID!
+    traits: String 
+    ideals: String 
+    bonds: String
+    flaws: String 
+    proficiencies: String 
+    languages: String
+  ): Personality
   addEquipment(
     characterId: ID!
     name: String!

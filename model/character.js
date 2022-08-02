@@ -35,6 +35,11 @@ const characterSchema = new Schema({
     ]
     //add party members?
 })
-
+characterSchema.pre('findByIdAndRemove', function(next) {
+    Equipment.remove({characterId: this._id}).exec()
+    Stats.remove({characterId: this._id}).exec()
+    Personality.remove({characterId: this._id}).exec()
+    next()
+})
 const Character = model('Character', characterSchema)
 module.exports = Character

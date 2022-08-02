@@ -15,12 +15,14 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
+        trim: true,
+        lowercase: true,
         match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
         type: String,
         required: true,
-        minlength: 7
+        minlength: 8
     },
     token: String,
     createdAt: 
